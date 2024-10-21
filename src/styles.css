@@ -1,0 +1,223 @@
+@import url("styleguide.css");
+.home {
+  overflow-x: hidden;
+  background-color: var(--black);
+}
+.navigation {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 60px;
+  position: relative;
+  width: 1440px;
+  color: var(--black);
+}
+
+.navigation .text-wrapper {
+  color: var(--neutraloffwhite);
+  font-family: "Bebas Neue-Bold";
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  line-height: 48px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.navigation .column {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 32px;
+  justify-content: center;
+  position: relative;
+  margin-right: 60px;
+}
+
+.navigation .div {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 32px;
+  position: relative;
+  margin-right: 60px;
+}
+
+.navigation .link {
+  color: var(--neutraloffwhite);
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.hero-content {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  padding: 0px 0px 22px;
+  position: relative;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-evenly;
+  margin-left: 108px;
+}
+.hero-content .hero-content-sub {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: 544px;
+  flex: 0 0 auto;
+}
+.hero-content .hero-content-sub .hero-header {
+  color: #ffffff;
+  font-family: "Bebas Neue-Regular", Helvetica;
+  font-size: 101px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 90.9px;
+  position: relative;
+  top: 0;
+  width: 544px;
+  margin-bottom: 0%;
+}
+.hero-content .hero-content-sub .text-wrapper {
+  color: #c7c7c7fd;
+  font-family: "Manrope-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 27px;
+  position: relative;
+  top: 0;
+  width: 544px;
+  margin-bottom: 40px;
+}
+.action {
+  align-items: center;
+  border-radius: 4px;
+  color: #000000;
+  display: flex;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 16px;
+
+  justify-content: center;
+  letter-spacing: -0.48px;
+  line-height: 24px;
+  position: relative;
+  text-align: center;
+}
+
+.hero-content .hero-image {
+  height: 663px;
+  width: 600px;
+}
+.hero-content .hero-image .portrait {
+  height: 663px;
+  object-fit: contain;
+  position: relative;
+  width: 600px;
+}
+.button {
+  all: unset;
+  align-items: center;
+  background-color: var(--primary);
+  border-radius: 100px;
+  box-sizing: border-box;
+  display: inline-flex;
+  gap: 12px;
+  height: 54px;
+  justify-content: center;
+  padding: 20px 6px 20px 24px;
+  position: relative;
+}
+
+.button .title {
+  color: var(--neutralblack);
+  font-family: var(--misc-button-font-family);
+  font-size: var(--misc-button-font-size);
+  font-style: var(--misc-button-font-style);
+  font-weight: var(--misc-button-font-weight);
+  letter-spacing: var(--misc-button-letter-spacing);
+  line-height: var(--misc-button-line-height);
+  margin-top: -2px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.button .circle {
+  height: 42px;
+  margin-bottom: -14px;
+  margin-top: -14px;
+  overflow: visible;
+  position: relative;
+  width: 42px;
+}
+
+.button .dot {
+  background-color: var(--neutralblack);
+  border-radius: 20px;
+  height: 40px;
+  position: relative;
+  width: 40px;
+}
+
+.button .img {
+  height: 24px;
+  left: 9px;
+  position: absolute;
+  top: 9px;
+  width: 24px;
+  z-index: 2;
+}
+
+.bxl-linkedin-svg {
+  height: 26px;
+  position: relative;
+  width: 26px;
+}
+
+.bxl-linkedin-svg .vector {
+  height: 5px;
+  left: 3px;
+  position: relative;
+  top: 3px;
+  width: 5px;
+}
+
+.bxl-linkedin-svg .img {
+  height: 13px;
+  left: 3px;
+  position: absolute;
+  top: 9px;
+  width: 19px;
+}
+.frame {
+  align-items: center;
+  background-color: #222222;
+  border-radius: 100px;
+  display: flex;
+  gap: 10px;
+  height: 54px;
+  justify-content: center;
+  position: relative;
+  width: 54px;
+}
+
+.frame .bxl-github-svg {
+  height: 26px;
+  position: relative;
+  width: 26px;
+}
