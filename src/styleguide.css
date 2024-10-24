@@ -9,11 +9,11 @@
   --text-regular-normal-line-height: 150%;
   --white: rgba(255, 255, 255, 1);
   --misc-button-font-family: "Manrope", Helvetica;
-  --misc-button-font-size: 16px;
+  --misc-button-font-size: 1.3rem;
   --misc-button-font-style: normal;
   --misc-button-font-weight: 700;
   --misc-button-letter-spacing: 0px;
-  --misc-button-line-height: 100%;
+  --misc-button-line-height: 50%;
   --neutralblack: rgba(10, 10, 10, 1);
   --primary: rgba(211, 233, 122, 1);
 }

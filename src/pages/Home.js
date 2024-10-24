@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles.css";
 import { Navigation } from "../components/Navigation.js";
-import bio from "../assets/bio1.jpeg";
+import bio from "../assets/bio.jpeg";
 import { Button } from "../components/Button.js";
 
 import linkedin from "../assets/bxl-linkedin.svg.svg";

@@ -4,7 +4,7 @@ import "../styles.css";
 export const Navigation = () => {
   return (
     <div className="navigation">
-      <div className="text-wrapper">OMER FARUK BULUT</div>
+      <div className="text-wrapper">OMER F. BULUT</div>
       <div className="column">
         <div className="div">
           <Link to="/works" className="link">
