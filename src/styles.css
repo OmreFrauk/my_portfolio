@@ -1,29 +1,33 @@
 @import url("styleguide.css");
+.vsc-initialized {
+  overscroll-behavior: none;
+}
+.root {
+  overscroll-behavior: none;
+}
 .home {
   overflow-x: hidden;
-
+  overscroll-behavior: none;
   background-color: var(--black);
 }
 .navigation {
   align-items: center;
   display: flex;
   justify-content: space-between;
-
   position: relative;
   padding: 1.5rem 5vw; /* Dynamic padding */
-  color: var(--black);
+  background-color: var(--black);
 }
 
 .navigation .text-wrapper {
   color: var(--neutraloffwhite);
-  font-family: "Bebas Neue-Bold";
+  font-family: "Bebas Neue-Regular", Helvetica;
   font-size: 2rem; /* Rem-based for better scaling */
-  line-height: 2.5rem;
-  letter-spacing: -0.32px;
-
+  letter-spacing: -0.22rem;
+  font-weight: 800;
   margin-top: -1px;
   position: relative;
-  white-space: nowrap;
+
   width: fit-content;
 }
 
@@ -45,10 +49,11 @@
 
 .navigation .link {
   color: var(--neutraloffwhite);
-  font-family: "Inter-Medium", Helvetica;
+  font-family: "Bebas Neue-Regular", Helvetica;
   font-size: 1rem;
   line-height: 1.5rem;
   position: relative;
+  text-decoration: none;
 }
 
 .hero-content {
@@ -74,18 +79,21 @@
 }
 .hero-content .hero-header {
   color: #ffffff;
-  font-family: "Bebas Neue-Regular", Arial, Helvetica, sans-serif;
-  font-size: 5vw;
-  line-height: 4.4vw;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 5rem;
+  line-height: 5rem;
   position: relative;
-
+  letter-spacing: -0.32rem;
   margin-bottom: 0%;
+  font-weight: 800;
+
+  transform: scaley(1.17);
 }
 .hero-content .text-wrapper {
   color: #c7c7c7fd;
   font-family: "Manrope-Regular", Helvetica;
-  font-size: 1.2vw;
-  line-height: 1.75vw;
+  font-size: 1.2rem;
+  line-height: 1.75rem;
   position: relative;
   top: 0;
   margin-bottom: 40px;
@@ -103,12 +111,17 @@
   text-align: center;
 }
 
-.hero-content .hero-image {
+.hero-image {
   height: auto;
   width: 90vw;
   max-width: 600px;
 }
-.hero-content .hero-image .portrait {
+.about .hero-image {
+  height: auto;
+  width: 90vw;
+  max-width: 500px;
+}
+.hero-image .portrait {
   object-fit: contain;
   width: 100%;
 }
@@ -116,19 +129,19 @@
   all: unset;
   align-items: center;
   background-color: var(--primary);
-  border-radius: 50px;
+  border-radius: 100px;
   box-sizing: border-box;
   display: inline-flex;
   gap: 0.75rem;
   justify-content: center;
-  padding: 1rem 1.2rem;
+  padding: 1.3rem 1.2rem;
   cursor: pointer;
 }
 
 .button .title {
   color: var(--neutralblack);
   font-family: var(--misc-button-font-family);
-  font-size: var(--misc-button-font-size);
+  font-size: 0.875rem;
   font-style: var(--misc-button-font-style);
   font-weight: var(--misc-button-font-weight);
   letter-spacing: var(--misc-button-letter-spacing);
@@ -136,39 +149,36 @@
   margin-top: -2px;
 
   white-space: nowrap;
-  width: fit-content;
 }
 
 .button .circle {
-  height: 42px;
-  margin-bottom: -14px;
-  margin-top: -14px;
+  height: 2rem;
+  margin-bottom: -1rem;
+  margin-top: -1rem;
   overflow: visible;
   position: relative;
-  width: 42px;
+  width: 2rem;
+  margin-right: -1rem;
 }
 
 .button .dot {
   background-color: var(--neutralblack);
-  border-radius: 20px;
-  height: 40px;
+  border-radius: 1.2rem;
+  height: 2rem;
   position: relative;
-  width: 40px;
+  width: 2rem;
 }
 
 .button .img {
-  height: 24px;
-  left: 9px;
-  position: absolute;
-  top: 9px;
-  width: 24px;
-  z-index: 2;
+  height: 2rem;
+  position: relative;
+  width: 1.2rem;
 }
 
 .bxl-linkedin-svg {
-  height: 26px;
+  height: 1.2rem;
   position: relative;
-  width: 26px;
+  width: 1.2rem;
 }
 
 .bxl-linkedin-svg .vector {
@@ -180,26 +190,122 @@
 }
 
 .bxl-linkedin-svg .img {
-  height: 13px;
+  height: 1rem;
   left: 3px;
   position: absolute;
   top: 9px;
-  width: 19px;
+  width: 1rem;
 }
 .frame {
   align-items: center;
   background-color: #222222;
   border-radius: 100px;
   display: flex;
-  gap: 10px;
-  height: 54px;
+  gap: 0.8rem;
+  height: 3rem;
   justify-content: center;
   position: relative;
-  width: 54px;
+  width: 3rem;
+  cursor: pointer;
 }
 
 .frame .bxl-github-svg {
-  height: 26px;
+  height: 1.2rem;
   position: relative;
-  width: 26px;
+  width: 1.2rem;
+}
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navigation .text-wrapper {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem 2vw;
+    gap: 1rem;
+  }
+
+  .hero-content .hero-header {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+
+  .hero-content .text-wrapper {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .button {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .button .title {
+    font-size: 1rem;
+  }
+
+  .button .circle {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .button .img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .frame {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content .hero-header {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .button .title {
+    font-size: 0.875rem;
+  }
+
+  .navigation .link {
+    font-size: 0.875rem;
+  }
+
+  .navigation {
+    padding: 1rem 1.5rem;
+  }
+}
+.about {
+  background-color: var(--black);
+}
+.aboutme {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+.about .hero-content {
+  gap: 16rem;
+  padding: 10rem 5vw;
+  align-items: flex-start;
+  display: flex;
+}
+.line {
+  background-color: var(--neutraloffwhite);
+  height: 1px;
+  width: 100%;
+  opacity: 0.3;
 }

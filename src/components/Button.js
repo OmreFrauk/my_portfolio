@@ -3,9 +3,8 @@ import { motion } from "framer-motion";
 import img from "../assets/arr.svg";
 import "../styles.css";
 
-export const Button = () => {
+export const Button = ({ text, link }) => {
   const [isHover, setIsHover] = React.useState(false);
-  console.log(img);
 
   return (
     <button
@@ -17,7 +16,7 @@ export const Button = () => {
         setIsHover(true);
       }}
     >
-      <div className="title">CONTACT ME</div>
+      <div className="title">{text}</div>
 
       <div className="circle">
         <motion.div
