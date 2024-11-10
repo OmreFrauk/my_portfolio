@@ -19,7 +19,7 @@ function Home() {
                 accessible and user friendly websites.
               </p>
               <div className="action">
-                <Button text="CONTACT ME" />
+                <Button text="CONTACT ME" animation="1" />
                 <Frames />
               </div>
             </div>
