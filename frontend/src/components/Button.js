@@ -15,6 +15,7 @@ export const Button = (props) => {
       onMouseEnter={() => {
         setIsHover(true);
       }}
+      onClick={props.onClick}
     >
       <div className="title">{props.text}</div>
       {props.animation === "1" ? (

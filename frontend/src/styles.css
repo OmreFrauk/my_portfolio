@@ -322,3 +322,120 @@ html {
 .contact-content {
   padding: 12rem 5rem;
 }
+.workFrame {
+  font-family: "Manrope-Regular", Helvetica;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #0d1117; /* Matches dark background */
+  color: #c9d1d9; /* Neutral white text */
+  border: 1px seashell; /* Subtle border */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.work-photo {
+  flex: 1; /* Take equal space */
+  max-width: 300px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden; /* Ensure image fits inside rounded corners */
+
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.portrait {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image fits properly */
+}
+
+.work-content {
+  flex: 2; /* Take more space */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.work-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.work-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.work-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.work-info div {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #30363d;
+  padding: 0.5rem 0;
+}
+
+.work-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.work-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #d3e879;
+  padding: 0.5rem;
+  align-self: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.work-links a:hover {
+  background: transparent;
+  color: #d3e879;
+}
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+.link-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: baseline;
+}
+.tech-tags {
+  display: flex;
+  gap: 8px;
+}
+.tech {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.tech-tag {
+  background-color: #333; /* Koyu renk arka plan */
+  color: #fff; /* Yazı rengi */
+  padding: 4px 8px; /* İç boşluk */
+  border-radius: 4px; /* Köşeleri yuvarlat */
+  font-size: 14px; /* Yazı boyutu */
+}

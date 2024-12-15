@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles.css";
-import { Navigation } from "../components/Navigation.js";
+import { Navigation } from "../components/Navigation.jsx";
 import bio from "../assets/bio.jpeg";
 import { Button } from "../components/Button.js";
 import { Frames } from "../components/Frames.js";

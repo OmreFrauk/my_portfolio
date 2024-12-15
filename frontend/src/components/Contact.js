@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles.css";
 import { Form } from "./FormInput";
 import { Button } from "./Button";
 import { Frames } from "./Frames";
+import { insertMessage, sendemail } from "../utils/notion";
 export const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const handleClick = () => {
+    const data = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+    };
+    console.log(data);
+    insertMessage(data);
+    sendemail(data);
+  };
+
   return (
     <div className="contact">
       <div className="hero-content-sub  ">
@@ -54,11 +71,39 @@ export const Contact = () => {
         </div>
       </div>
       <div className="sendemail">
-        <Form height="2rem" width="30rem" title="Name" type="input" />
-        <Form height="2rem" width="30rem" title="Email" type="input" />
-        <Form height="2rem" width="30rem" title="Subject" type="input" />
-        <Form height="11rem" width="30rem" title="Message" type="text" />
-        <Button text="SUBMIT" animation="0">
+        <Form
+          height="2rem"
+          width="30rem"
+          title="Name"
+          type="input"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Form
+          height="2rem"
+          width="30rem"
+          title="Email"
+          type="input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Form
+          height="2rem"
+          width="30rem"
+          title="Subject"
+          type="input"
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+        />
+        <Form
+          height="11rem"
+          width="30rem"
+          title="Message"
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        <Button text="SUBMIT" animation="0" onClick={handleClick}>
           {" "}
         </Button>
       </div>

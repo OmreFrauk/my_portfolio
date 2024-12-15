@@ -1,14 +1,14 @@
 import React from "react";
 import "../styles.css";
 
-export const Form = (props) => {
+export const Form = ({ height, width, title, type, value, onChange }) => {
   const styles = {
     backgroundColor: "#1a1a1a",
     boxShadow: "none",
     border: "none",
     color: "white",
-    height: props.height || "2rem",
-    width: props.width || "10rem",
+    height: height || "2rem",
+    width: width || "10rem",
     borderRadius: "0.5rem",
     padding: "0.5rem",
     fontFamily: "Helvetica",
@@ -17,12 +17,12 @@ export const Form = (props) => {
   };
   return (
     <div className="form">
-      <label className="label">{props.title}</label>
+      <label className="label">{title}</label>
       <div>
-        {props.type === "input" ? (
-          <input style={styles} />
+        {type === "input" ? (
+          <input style={styles} value={value} onChange={onChange} />
         ) : (
-          <textarea style={styles} />
+          <textarea style={styles} value={value} onChange={onChange} />
         )}
       </div>
     </div>
