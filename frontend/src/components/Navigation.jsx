@@ -4,7 +4,10 @@ import "../styles.css";
 export const Navigation = () => {
   return (
     <div className="navigation">
-      <div className="text-wrapper">OMER F. BULUT</div>
+      <Link className="text-wrapper" to="/">
+        OMER F. BULUT
+      </Link>
+
       <div className="column">
         <div className="div">
           <Link to="/works" className="link">
