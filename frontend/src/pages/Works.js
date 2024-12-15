@@ -27,9 +27,13 @@ export const Works = () => {
       <Navigation />
       <div className="works-content">
         {projects
-          .filter((project) => project.tech && project.tech.length > 0) // tech özelliği varsa ve boş değilse
+          .filter(
+            (project) =>
+              project.project_name.title[0] &&
+              project.project_name.title.length > 0
+          ) //
           .map((project) => (
-            <WorkFrame key={project.id} project={project} />
+            <WorkFrame key={project.id.number} project={project} />
           ))}
       </div>
     </div>
