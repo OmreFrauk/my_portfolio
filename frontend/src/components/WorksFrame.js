@@ -2,7 +2,14 @@ import React from "react";
 import "../styles.css";
 import bio from "../assets/image.png";
 export const WorkFrame = ({
-  project: { project_name, project_description, project_year, technologies },
+  project: {
+    project_name,
+    project_description,
+    project_year,
+    technologies,
+    project_url,
+    project_screenshots,
+  },
 }) => {
   const colorMap = {
     React: "#28456c",
@@ -11,11 +18,16 @@ export const WorkFrame = ({
     "Amazon Services": "#603b2d",
     Mongoose: "#69314c",
   };
+  console.log("github", project_url.url);
   return (
     <div className="workFrame">
       {/* Image Section */}
       <div className="work-photo">
-        <img className="portrait" alt="Portrait" src={bio} />
+        <img
+          className="portrait"
+          alt="Portrait"
+          src={project_screenshots.files[0].file.url}
+        />
       </div>
 
       {/* Content Section */}
@@ -69,7 +81,11 @@ export const WorkFrame = ({
           </div>
           <div className="link-div">
             <div className="link">
-              <a href="#github" target="_blank" rel="noopener noreferrer">
+              <a
+                href={project_url.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 SEE ON GITHUB
               </a>
               <img src={require("../assets/github.png")} alt="github" />
