@@ -38,12 +38,12 @@ export const WorkFrame = ({
         </p>
 
         <div className="work-info">
-          <div>
-            <span>Year</span>
-            <span>{project_year || "2022"}</span>
+          <div className="tech-info">
+            <span className="tech-title">Year</span>
+            <span className="tech-title">{project_year || "2022"}</span>
           </div>
           <div className="tech">
-            <span>Technologies</span>
+            <span className="tech-title">Technologies</span>
             <span className="tech-tags">
               {technologies.multi_select.map((tech) => (
                 <span

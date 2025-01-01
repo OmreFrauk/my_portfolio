@@ -2,7 +2,7 @@ import { Button } from "../components/Button";
 import { Frames } from "../components/Frames";
 import { Navigation } from "../components/Navigation";
 import bio from "../assets/bio.jpeg";
-import { Contact } from "../components/Contact";
+import { Timeline } from "../components/Timeline";
 
 export const AboutMe = () => {
   return (
@@ -60,21 +60,10 @@ export const AboutMe = () => {
             </div>
           </div>
           <div className="line" />
-          <div className="hero-content">
-            <div className="hero-header" style={{ fontSize: "3.2rem" }}>
-              MY EXPERIENCES
-            </div>
+          <div className="hero-content" style={{ alignItems: "Baseline" }}> 
             <div className="hero-content-sub">
               <div className="aboutme">
-                <div className="text-wrapper">
-                  <p style={{ fontSize: "1.2rem" }}>HI, I AM OMER F. BULUT.</p>
-                  <p>
-                    I am a web developer based in Istanbul, Turkey. I have a
-                    passion for web development and love to create user-friendly
-                    websites. I have experience in HTML, CSS, JavaScript, React,
-                    and Node.js.
-                  </p>
-                </div>
+                  <Timeline />
               </div>
             </div>
           </div>
