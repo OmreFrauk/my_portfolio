@@ -46,8 +46,7 @@ export const Works = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          {projects.
-          filter(
+          {projects.filter(
             (project) =>
               project.project_name.title[0] &&
               project.project_name.title.length > 0).map((project) => (

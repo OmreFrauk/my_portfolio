@@ -4,7 +4,7 @@ import bxlInstagramSvg from "../assets/bxl-instagram.svg.svg";
 import twittersvg from "../assets/twitter.svg";
 export const Frames = () => {
   return (
-    <div className="action">
+    <div className="action-buttons">
       <div className="frame">
         <a
           href="https://www.linkedin.com/in/%C3%B6mer-faruk-bulut-0b4b8a184/"
