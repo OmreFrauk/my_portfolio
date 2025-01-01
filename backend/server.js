@@ -11,7 +11,7 @@ const app = express();
 const cors = require("cors");
 app.use(express.json());
 const corsOptions = {
-  origin: process.env.REACT_APP_API_BASE,
+  origin: "https://www.omrefrauk.com.tr",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
