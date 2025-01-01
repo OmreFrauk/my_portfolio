@@ -79,9 +79,7 @@ export const AboutMe = () => {
             </div>
           </div>
           <div className="line" />
-          <div className="hero-content">
-            <Contact />s
-          </div>
+         
         </div>
       </div>
     </div>

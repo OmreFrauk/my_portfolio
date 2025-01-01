@@ -76,9 +76,10 @@ html {
   gap: 12rem;
   padding: 2rem 5vw;
   position: relative;
-  flex-wrap: nowrap;
-  align-content: stretch;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 .hero-content-sub {
   align-items: baseline;
@@ -86,19 +87,21 @@ html {
   flex-direction: column;
   gap: 3rem;
   position: relative;
-  width: 40vw;
-  height: auto;
+  width: 100%;
   max-width: 700px;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 .hero-header {
   color: #ffffff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 5rem;
+  font-size: clamp(2rem, 5vw, 5rem);
   position: relative;
   letter-spacing: -0.22rem;
   margin-bottom: 0%;
   font-weight: 600;
-  width: 30rem;
+  width: 100%;
+  max-width: 30rem;
   transform: scaley(1.2);
 }
 .hero-content-sub .text-wrapper {
@@ -231,11 +234,15 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
 }
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  width: 100%;
+  max-width: 30rem;
+  box-sizing: border-box;
 }
 .label {
   color: var(--neutraloffwhite);
@@ -248,6 +255,10 @@ html {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  width: 100%;
+  max-width: 30rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 .contact-content {
   padding: 12rem 5rem;
@@ -389,7 +400,15 @@ html {
   .navigation .text-wrapper {
     font-size: 1.5rem;
     line-height: 2rem;
-    letter-spacing: 0; /* Negatif değeri azaltalım mobilde */
+    letter-spacing: 0;
+  }
+
+  .navigation .column {
+    gap: 1rem;
+  }
+
+  .navigation .link {
+    font-size: 0.9rem;
   }
 
   .hero-content {
@@ -398,13 +417,19 @@ html {
     margin-bottom: 20px;
     gap: 2rem;
     padding: 1rem;
+    width: 100%;
+  }
+
+  .hero-content-sub {
+    width: 100%;
+    gap: 1.5rem;
   }
 
   .hero-header {
-    font-size: 3rem;
-    line-height: 3.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     width: 100%;
-    letter-spacing: 0;
+    letter-spacing: -0.1rem;
     transform: none;
     margin: 0 auto;
     white-space: normal;
@@ -426,20 +451,32 @@ html {
   .about .hero-content {
     flex-direction: column;
     gap: 2rem;
-    padding: 4rem 5vw;
+    padding: 2rem 1rem;
     text-align: center;
+  }
+
+  .aboutme {
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
 
   .workFrame {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 1rem;
     gap: 1rem;
-    margin: 2rem auto;
+    margin: 1rem;
+    width: auto;
   }
 
   .work-photo {
     max-width: 100%;
+    width: 100%;
+  }
+
+  .work-content {
     width: 100%;
   }
 
@@ -452,14 +489,226 @@ html {
     margin-bottom: 1rem;
   }
 
-  .content {
-    max-width: 95vw;
-    padding: 1rem 0;
+  .work-links {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .aboutme {
-    gap: 1rem;
-    align-items: center;
+  .experience-container {
+    padding: 1rem;
+  }
+
+  .experience-container h2 {
+    font-size: 2rem;
     text-align: center;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+
+  .timeline-content {
+    width: calc(100% - 50px);
+    margin-left: 40px !important;
+    margin-right: 0 !important;
+  }
+
+  .timeline-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .timeline-content h4 {
+    font-size: 1rem;
+  }
+
+  .period {
+    font-size: 0.9rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .contact-content {
+    padding: 2rem 1rem;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .button {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .button .title {
+    font-size: 0.8rem;
+  }
+
+  .button .circle {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .tech-tags {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+  }
+
+  .contact {
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .hero-content-sub {
+    text-align: left;
+  }
+
+  .hero-header {
+    font-size: clamp(2rem, 8vw, 3.4rem) !important;
+    width: 100%;
+    text-align: left;
+  }
+
+  .sendemail {
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .form input, 
+  .form textarea {
+    width: 100% !important;
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  .hero-text {
+    text-align: left;
+  }
+
+  .hero-text .text-wrapper {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .action {
+    justify-content: flex-start;
+  }
+}
+
+/* Tablet boyutu için ek düzenlemeler */
+@media (min-width: 501px) and (max-width: 768px) {
+  .hero-content {
+    gap: 4rem;
+    padding: 2rem;
+  }
+
+  .hero-header {
+    font-size: 3rem;
+  }
+
+  .hero-content-sub {
+    width: 100%;
+  }
+
+  .workFrame {
+    margin: 2rem;
+    padding: 1.5rem;
+  }
+
+  .navigation {
+    padding: 1.5rem;
+  }
+
+  .timeline-content {
+    width: calc(100% - 70px);
+    margin-left: 60px !important;
+    margin-right: 0 !important;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-dot {
+    left: 30px;
+  }
+
+  .contact-content {
+    padding: 4rem 2rem;
+  }
+}
+
+/* Yatay mobil cihazlar için ek düzenlemeler */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .hero-header {
+    font-size: 2rem;
+  }
+
+  .navigation {
+    padding: 0.5rem 1rem;
+  }
+
+  .about .hero-content {
+    padding: 1rem;
+  }
+}
+
+/* Tablet görünümü için iyileştirmeler */
+@media (min-width: 501px) and (max-width: 1024px) {
+  .hero-content {
+    gap: 4rem;
+    padding: 2rem;
+  }
+
+  .hero-content-sub {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contact {
+    padding: 2rem;
+    gap: 3rem;
+  }
+
+  .sendemail {
+    width: 100%;
+    max-width: 40rem;
+  }
+
+  .form input, 
+  .form textarea {
+    width: 100% !important;
+    max-width: none;
+  }
+
+  .hero-header {
+    font-size: clamp(2.5rem, 6vw, 3.4rem) !important;
   }
 }
