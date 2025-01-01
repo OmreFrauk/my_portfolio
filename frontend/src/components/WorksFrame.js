@@ -1,10 +1,11 @@
 import React from "react";
 import "../styles.css";
+import bio from "../assets/image.png";
 export const WorkFrame = ({
   project: {
     project_name,
     project_description,
-    start_date,
+    project_year,
     technologies,
     project_url,
     project_screenshots,
@@ -17,7 +18,7 @@ export const WorkFrame = ({
     "Amazon Services": "#603b2d",
     Mongoose: "#69314c",
   };
-
+  console.log("github", project_url.url);
   return (
     <div className="workFrame">
       {/* Image Section */}
@@ -43,7 +44,7 @@ export const WorkFrame = ({
         <div className="work-info">
           <div>
             <span>Year</span>
-            <span>{start_date.date.start}</span>
+            <span>2022</span>
           </div>
           <div className="tech">
             <span>Technologies</span>

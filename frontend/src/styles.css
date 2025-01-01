@@ -1,5 +1,4 @@
 @import url("styleguide.css");
-
 .vsc-initialized {
   overscroll-behavior: none;
   margin: 0;
@@ -29,18 +28,19 @@ html {
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding: 1.5rem 5vw;
+  padding: 1.5rem 5vw; /* Dynamic padding */
   background-color: var(--black);
 }
 
 .navigation .text-wrapper {
   color: var(--neutraloffwhite);
   font-family: "Bebas Neue-Regular", Helvetica;
-  font-size: 2rem;
+  font-size: 2rem; /* Rem-based for better scaling */
   letter-spacing: -0.22rem;
   font-weight: 800;
   margin-top: -1px;
   position: relative;
+
   width: fit-content;
 }
 
@@ -73,8 +73,8 @@ html {
   align-items: center;
   display: flex;
   flex-direction: row;
-  gap: 12rem;
-  padding: 2rem 5vw;
+  gap: 2rem;
+  padding: 2rem 5vw; /* Dynamic padding */
   position: relative;
   flex-wrap: wrap;
   justify-content: center;
@@ -126,7 +126,7 @@ html {
 
 .hero-image {
   height: auto;
-  width: 25rem;
+  width: 90vw;
   max-width: 600px;
 }
 .about .hero-image {
@@ -160,6 +160,7 @@ html {
   letter-spacing: var(--misc-button-letter-spacing);
   line-height: var(--misc-button-line-height);
   margin-top: -2px;
+
   white-space: nowrap;
 }
 
@@ -199,6 +200,74 @@ html {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navigation .text-wrapper {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem 2vw;
+    gap: 1rem;
+  }
+
+  .hero-content .hero-header {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+
+  .hero-content .text-wrapper {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .button {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .button .title {
+    font-size: 1rem;
+  }
+
+  .button .circle {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .button .img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .frame {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content .hero-header {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .button .title {
+    font-size: 0.875rem;
+  }
+
+  .navigation .link {
+    font-size: 0.875rem;
+  }
+
+  .navigation {
+    padding: 1rem 1.5rem;
+  }
+}
 .about {
   background-color: var(--black);
   display: flex;
@@ -285,6 +354,7 @@ html {
   position: relative;
   border-radius: 8px;
   overflow: hidden; /* Ensure image fits inside rounded corners */
+
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 

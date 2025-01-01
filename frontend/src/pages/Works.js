@@ -5,15 +5,18 @@ import { Navigation } from "../components/Navigation";
 import { getProjects } from "../utils/notion";
 export const Works = () => {
   const [projects, setProjects] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const projects = await getProjects();
         setProjects(projects);
+
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching projects: ", error.message);
       } finally {
+        setLoading(false);
       }
     };
     fetchProjects();
