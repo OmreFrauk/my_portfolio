@@ -11,11 +11,16 @@ const app = express();
 const cors = require("cors");
 app.use(express.json());
 const corsOptions = {
-  origin: "https://www.omrefrauk.com.tr",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
+  origin: ["https://www.omrefrauk.com.tr", "http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
+
+// Preflight istekleri için OPTIONS endpoint'i
+app.options("*", cors(corsOptions));
 
 app.get("/notion/getProjects", async (req, res) => {
   try {
