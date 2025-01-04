@@ -819,7 +819,7 @@ html {
 }
 
 /* Tablet boyutu için ek düzenlemeler */
-@media (min-width: 501px) and (max-width: 1441px) {
+@media (min-width: 501px) and (max-width: 2001px) {
   .hero-content {
     gap: 2rem;
     padding: 2rem;
