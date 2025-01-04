@@ -33,3 +33,13 @@ export const sendemail = async (data) => {
     throw new Error("Error sending email");
   }
 };
+
+export const getExperiences = async () => {
+  try {
+    const response = await axios.get(`http://localhost:5000/notion/getExperiences`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching experiences: ", error.message);
+    throw new Error("Error fetching experiences from Notion Database");
+  }
+};

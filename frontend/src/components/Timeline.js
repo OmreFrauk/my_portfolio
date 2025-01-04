@@ -1,7 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { getExperiences } from "../utils/notion";
+import { useState, useEffect } from "react";
 
-const TimelineItem = ({ date, title, company, location, description, position }) => {
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const month = date.toLocaleString('en-US', { month: 'short' });
+  const year = date.getFullYear();
+  return `${month} ${year}`;
+};
+
+const TimelineItem = ({ date_start, date_end, title, company, location, description, position }) => {
   return (
     <motion.div 
       className="timeline-item"
@@ -12,7 +21,7 @@ const TimelineItem = ({ date, title, company, location, description, position })
     >
       <div className="timeline-dot"></div>
       <div className="timeline-content">
-        <div className="period">{date}</div>
+        <div className="period">{`${formatDate(date_start)} - ${formatDate(date_end)}`}</div>
         <h3>{title}</h3>
         <h4>{company}</h4>
         <div className="location">{location}</div>
@@ -23,7 +32,22 @@ const TimelineItem = ({ date, title, company, location, description, position })
 };
 
 export const Timeline = () => {
-  const experiences = [
+  const [experiences, setExperiences] = useState([]);
+
+
+  useEffect(() => {
+    const fetchExperiences = async () => {
+      try {
+        const experiences = await getExperiences();
+        setExperiences(experiences);
+      } catch (error) {
+        console.error("Error fetching experiences: ", error.message);
+      } 
+    };
+    fetchExperiences();
+  }, []);
+  console.log(experiences);
+  /*const experiences = [
     {
       date: "Jul 2024 - Sep 2024",
       title: "Product Manager",
@@ -39,7 +63,7 @@ export const Timeline = () => {
       description: "During my tenure at Kodluyoruz, I played a key role in planning and managing free software training programs for youth, leading the design and implementation of events and curricula..."
     },
     // Diğer deneyimlerinizi buraya ekleyebilirsiniz
-  ];
+  ];*/
 
   return (
     <div className="experience-container">

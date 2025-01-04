@@ -36,6 +36,29 @@ app.get("/notion/getProjects", async (req, res) => {
   }
 });
 
+app.get("/notion/getExperiences", async (req, res) => {
+  try {
+    const response = await notion.databases.query({
+      database_id: process.env.NOTION_DATABASE_EXPERIENCES_ID,
+    });
+    const properties = response.results.map((page) => page.properties);
+    const experiences = properties.map((property) => {
+      return {
+        date_start: property.Date.date.start,
+        date_end: property.Date.date.end,
+        title: property.Title.rich_text[0].plain_text,
+        company: property.Company.title[0].plain_text,
+        location: property.Location.rich_text[0].plain_text,
+        description: property.Description.rich_text[0].plain_text,
+      };
+    });
+    console.log("Properties: ", experiences);
+    res.status(200).json(experiences);
+  } catch (error) {
+    res.status(500).json("Error fetching data from Notion Database");
+  }
+});
+
 app.post("/notion/insertMessage", async (req, res) => {
   const data = req.body;
 
