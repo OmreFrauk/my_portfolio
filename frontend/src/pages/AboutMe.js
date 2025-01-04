@@ -5,6 +5,13 @@ import bio from "../assets/bio.jpeg";
 import { Timeline } from "../components/Timeline";
 
 export const AboutMe = () => {
+  const handleDownload = async () => {
+    try {
+      await downloadCv();
+    } catch (error) {
+      console.error("Error downloading CV: ", error.message);
+    }
+  };
   return (
     <div className="aboutmePage">
       <Navigation />
@@ -26,7 +33,7 @@ export const AboutMe = () => {
                   </p>
                 </div>
                 <div className="action">
-                  <Button text="DOWNLOAD RESUME"></Button>
+                  <Button text="DOWNLOAD RESUME" onClick={handleDownload}></Button>
                   <Frames />
                 </div>
               </div>

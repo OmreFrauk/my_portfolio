@@ -1,6 +1,7 @@
 const axios = require("axios");
 require("dotenv").config();
 const express = require("express");
+const path = require('path');
 
 const { Client } = require("@notionhq/client");
 const notion = new Client({
@@ -135,4 +136,17 @@ app.post("/email/sendmail", (req, res) => {
     }
   });
 });
+
+app.get('/download-cv', (req, res) => {
+  const cvPath = path.join(__dirname, 'assets', 'cv.pdf'); // CV'nizin konumu
+  res.download(cvPath, 'cv.pdf', (err) => {
+    if (err) {
+      res.status(500).send({
+        message: "CV indirilemedi.",
+        error: err,
+      });
+    }
+  });
+});
+
 app.listen(5000, () => console.log("Server is running on port 5000"));

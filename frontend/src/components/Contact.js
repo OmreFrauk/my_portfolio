@@ -3,7 +3,7 @@ import "../styles.css";
 import { Form } from "./FormInput";
 import { Button } from "./Button";
 import { Frames } from "./Frames";
-import { insertMessage, sendemail } from "../utils/notion";
+import { insertMessage, sendemail, downloadCv } from "../utils/notion";
 export const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,6 +19,13 @@ export const Contact = () => {
     console.log(data);
     insertMessage(data);
     sendemail(data);
+  };
+  const handleDownload = async () => {
+    try {
+      await downloadCv();
+    } catch (error) {
+      console.error("Error downloading CV: ", error.message);
+    }
   };
 
   return (
@@ -49,7 +56,7 @@ export const Contact = () => {
           </div>
           <div className="text-wrapper">
             For more info here's my{" "}
-            <a
+            <div
               style={{
                 color: "white",
                 textFont: "bold",
@@ -58,12 +65,13 @@ export const Contact = () => {
                 textDecorationColor: "#D3E97A",
                 textDecorationThickness: "0.1rem",
                 textUnderlineOffset: "0.3rem",
+                cursor: "pointer",
               }}
               className="link"
-              href={"mailto:omar48faruk@gmail.com"}
+              onClick={handleDownload}
             >
               resume
-            </a>
+            </div>
           </div>
         </div>
         <div className="action">

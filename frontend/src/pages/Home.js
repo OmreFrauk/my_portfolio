@@ -4,12 +4,19 @@ import { Navigation } from "../components/Navigation.jsx";
 import bio from "../assets/bio.jpeg";
 import { Button } from "../components/Button.js";
 import { Frames } from "../components/Frames.js";
+import { downloadCv } from "../utils/notion";
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [typedText, setTypedText] = useState("");
   const fullText = " HI, I AM OMER F. BULUT.";
-  
+  const handleDownload = async () => {
+    try {
+      await downloadCv();
+    } catch (error) {
+      console.error("Error downloading CV: ", error.message);
+    }
+  };
   useEffect(() => {
     // Sayfa yüklendiğinde animasyon için
     setIsVisible(true);
@@ -41,8 +48,8 @@ function Home() {
                 accessible and user friendly websites.
               </p>
               <div className="action">
-                <Button text="CONTACT ME" animation="1" />
-                <Button text="DOWNLOAD CV" animation="2" />
+                <Button text="CONTACT ME" animation="1" onClick={() => window.location.href = '/contact'} />
+                <Button text="DOWNLOAD CV" animation="2" onClick={handleDownload} />
                 <Frames />
               </div>
             </div>

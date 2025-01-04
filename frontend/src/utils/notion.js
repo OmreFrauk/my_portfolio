@@ -36,10 +36,20 @@ export const sendemail = async (data) => {
 
 export const getExperiences = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/notion/getExperiences`);
+    const response = await axios.get(`${API_BASE}/notion/getExperiences`);
     return response.data;
   } catch (error) {
     console.error("Error fetching experiences: ", error.message);
     throw new Error("Error fetching experiences from Notion Database");
+  }
+};
+
+export const downloadCv = async () => {
+  try {
+    const response = await axios.get(`${API_BASE}/download-cv`);
+    return response.data;
+  } catch (error) {
+    console.error("Error downloading CV: ", error.message);
+    throw new Error("Error downloading CV");
   }
 };
