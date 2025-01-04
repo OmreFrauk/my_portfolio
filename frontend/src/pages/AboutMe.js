@@ -3,7 +3,7 @@ import { Frames } from "../components/Frames";
 import { Navigation } from "../components/Navigation";
 import bio from "../assets/bio.jpeg";
 import { Timeline } from "../components/Timeline";
-
+import { downloadCv } from "../utils/notion";
 export const AboutMe = () => {
   const handleDownload = async () => {
     try {
