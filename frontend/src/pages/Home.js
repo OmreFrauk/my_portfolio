@@ -37,9 +37,10 @@ function Home() {
 
   return (
     <div className="home">
-      <div className="div">
-        <div className={`overlap ${isVisible ? 'fade-in' : ''}`}>
+   
+        
           <Navigation />
+          <div className={`overlap ${isVisible ? 'fade-in' : ''}`}>
           <div className="hero-content">
             <div className="hero-content-sub">
               <div className="hero-header">{typedText}</div>
@@ -58,11 +59,11 @@ function Home() {
                 className="portrait hover-zoom" 
                 alt="Portrait" 
                 src={bio}
-                loading="lazy" 
+                loading="eager" 
               />
             </div>
           </div>
-        </div>
+
       </div>
     </div>
   );

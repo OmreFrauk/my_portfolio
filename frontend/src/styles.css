@@ -19,7 +19,7 @@ html {
   background-color: #000000;
 }
 .home {
-  overflow-x: hidden;
+  overflow: hidden;
   overscroll-behavior: none;
   background-color: var(--black);
 }
@@ -149,7 +149,8 @@ html {
 }
 .hero-image .portrait {
   object-fit: contain;
-  width: 100%;
+  width: 80%;
+ 
 }
 .button {
   all: unset;
@@ -165,6 +166,16 @@ html {
   width: auto;
   min-width: fit-content;
 }
+.button .circle {
+  height: 2rem;
+  margin-bottom: -1rem;
+  margin-top: -1rem;
+  overflow: visible;
+  position: relative;
+  width: 2rem;
+  margin-right: -1rem;
+}
+
 
 .button .title {
   color: var(--neutralblack);
@@ -1029,6 +1040,7 @@ html {
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
+   overflow: hidden;
 }
 
 @keyframes fadeIn {
