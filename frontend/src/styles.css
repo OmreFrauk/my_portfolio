@@ -89,7 +89,18 @@ html {
   gap: 3rem;
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 480px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+.contact .hero-content-sub {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
   padding: 0 1rem;
   box-sizing: border-box;
 }
