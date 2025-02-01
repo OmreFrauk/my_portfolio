@@ -834,10 +834,7 @@ html {
     margin: 2rem;
     padding: 1.5rem;
   }
-  .sendemail {
-    width: 100%;
-    max-width: 40rem;
-}
+ 
 
 
   .navigation {
@@ -898,10 +895,6 @@ html {
     gap: 3rem;
   }
 
-  .sendemail {
-    width: 100%;
-    max-width: 40rem;
-  }
 
   .form input, 
   .form textarea {
