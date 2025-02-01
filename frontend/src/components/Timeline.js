@@ -47,23 +47,6 @@ export const Timeline = () => {
     fetchExperiences();
   }, []);
   console.log(experiences);
-  /*const experiences = [
-    {
-      date: "Jul 2024 - Sep 2024",
-      title: "Product Manager",
-      company: "Borda Tech",
-      location: "Istanbul, Turkey (Intern)",
-      description: "During my internship at Borda Tech, I played a crucial role in the development of an AI-powered assistant for their healthcare product, Quattro. I gained hands-on experience in product management, including defining product vision, conducting competitor analysis, and engaging in cross-functional collaboration..."
-    },
-    {
-      date: "Jul 2023 - Jul 2024",
-      title: "Associate Team Member",
-      company: "Kodluyoruz",
-      location: "Istanbul, Turkey (Full Time - Remote)",
-      description: "During my tenure at Kodluyoruz, I played a key role in planning and managing free software training programs for youth, leading the design and implementation of events and curricula..."
-    },
-    // Diğer deneyimlerinizi buraya ekleyebilirsiniz
-  ];*/
 
   return (
     <div className="experience-container">

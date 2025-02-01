@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_BASE = "https://portfoliobackend-omrefrauks-projects.vercel.app";
+//const API_BASE = "https://portfoliobackend-omrefrauks-projects.vercel.app";
+const API_BASE = "http://localhost:5000";
 
 export const getProjects = async () => {
   try {
@@ -46,7 +47,25 @@ export const getExperiences = async () => {
 
 export const downloadCv = async () => {
   try {
-    const response = await axios.get(`${API_BASE}/download-cv`);
+    const response = await axios({
+      url: `${API_BASE}/download-cv`,
+      method: 'GET',
+      responseType: 'blob',
+      headers: {
+        'Accept': 'application/pdf'
+      }
+    });
+
+    // Dosyayı indir
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'cv.pdf');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(url);
+
     return response.data;
   } catch (error) {
     console.error("Error downloading CV: ", error.message);

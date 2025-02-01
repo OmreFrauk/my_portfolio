@@ -6,6 +6,7 @@ import { Timeline } from "../components/Timeline";
 import { downloadCv } from "../utils/notion";
 export const AboutMe = () => {
   const handleDownload = async () => {
+    console.log("Downloading CV..."); 
     try {
       await downloadCv();
     } catch (error) {

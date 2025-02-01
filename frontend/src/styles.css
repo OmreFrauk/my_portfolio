@@ -831,12 +831,18 @@ html {
 
   .hero-content-sub {
     width: 100%;
+    max-width: 600px;
   }
 
   .workFrame {
     margin: 2rem;
     padding: 1.5rem;
   }
+  .sendemail {
+    width: 100%;
+    max-width: 40rem;
+}
+
 
   .navigation {
     padding: 1.5rem;
@@ -929,6 +935,11 @@ html {
 
   .hero-header {
     font-size: clamp(2.5rem, 6vw, 3.4rem) !important;
+  }
+  .form input, 
+  .form textarea {
+    width: 100% !important;
+    max-width: none;
   }
 }
 

@@ -138,7 +138,7 @@ app.post("/email/sendmail", (req, res) => {
 });
 
 app.get('/download-cv', (req, res) => {
-  const cvPath = path.join(__dirname, 'assets', 'cv.pdf'); // CV'nizin konumu
+  const cvPath = path.join(__dirname, 'assets', 'cv.pdf');
   res.download(cvPath, 'cv.pdf', (err) => {
     if (err) {
       res.status(500).send({
