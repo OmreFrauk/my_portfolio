@@ -755,10 +755,6 @@ html {
     padding: 2rem 1rem;
   }
 
-  .form {
-    width: 100%;
-  }
-
  
   .tech-tags {
     flex-wrap: wrap;
@@ -857,27 +853,7 @@ html {
     margin-right: -1rem;
   }
 
-  .timeline-content {
-    width: calc(100% - 70px);
-    margin-left: 60px !important;
-    margin-right: 0 !important;
-  }
-
-  .timeline::before {
-    left: 30px;
-  }
-
-  .timeline-dot {
-    left: 30px;
-  }
-
-  .contact-content {
-    padding: 4rem 2rem;
-  }
-  .action-buttons {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
+ 
 }
 
 /* Yatay mobil cihazlar için ek düzenlemeler */
@@ -1080,36 +1056,39 @@ html {
   transition: transform 0.3s ease;
 }
 
-.hover-zoom:hover {
-  transform: scale(1.05);
-}
-
 .experience-container {
+  max-width: 100%;
+  width: 80%;
+  margin: 0 auto;
   padding: 4rem 5vw;
   background-color: var(--black);
-  color: var(--neutraloffwhite);
 }
 
-.experience-container h2 {
+.section-title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  color: #ffffff;
   text-align: center;
-  font-family: "Manrope-Bold", Helvetica;
-  color: var(--neutraloffwhite);
-  letter-spacing: -0.5px;
+  margin-bottom: 3rem;
 }
 
 .timeline {
   position: relative;
-  max-width: 1200px;
+  max-width: 100%;
+  width: 90%;
   margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
   width: 2px;
-  background: var(--primary);
+  background: linear-gradient(to bottom, 
+    rgba(211, 233, 122, 0.2) 0%,
+    rgba(211, 233, 122, 0.6) 50%,
+    rgba(211, 233, 122, 0.2) 100%
+  );
   top: 0;
   bottom: 0;
   left: 50%;
@@ -1119,103 +1098,162 @@ html {
 .timeline-item {
   padding: 2rem 0;
   position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 43%;
+  max-width: none;
+}
+
+.timeline-left {
+  margin-right: 57%;
+}
+
+.timeline-right {
+  margin-left: 57%;
 }
 
 .timeline-dot {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: var(--primary);
+  background-color: #0d1117;
+  border: 3px solid rgba(211, 233, 122, 0.5);
   border-radius: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2;
 }
 
+.timeline-dot::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .timeline-content {
-  width: 45%;
-  padding: 1.5rem;
-  background: #0d1117;
-  border-radius: 8px;
+  background: rgba(13, 17, 23, 0.7);
+  padding: 2rem;
+  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  margin-left: 4rem;
+  backdrop-filter: blur(10px);
 }
 
-.timeline-item:nth-child(even) .timeline-content {
-  margin-left: 0;
-  margin-right: 4rem;
+.timeline-left .timeline-dot {
+  right: -10px;
 }
 
-.timeline-content h3 {
+.timeline-right .timeline-dot {
+  left: -10px;
+}
+
+.timeline-period {
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-family: "Manrope-Regular", Helvetica;
+}
+
+.timeline-header {
+  margin-bottom: 1.5rem;
+}
+
+.timeline-title {
+  color: var(--neutraloffwhite);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--primary);
-  font-family: "Manrope-SemiBold", Helvetica;
-  letter-spacing: -0.3px;
+  font-family: "Manrope-Bold", Helvetica;
 }
 
-.timeline-content h4 {
+.timeline-subheader {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.timeline-company {
+  color: #c9d1d9;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-family: "Manrope-Medium", Helvetica;
 }
 
-.period {
+.timeline-location {
+  color: #8b949e;
   font-size: 0.9rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-  font-family: "Manrope-Regular", Helvetica;
-}
-
-.location {
-  font-size: 0.9rem;
-  color: #888;
   margin-bottom: 1rem;
   font-family: "Manrope-Regular", Helvetica;
 }
 
-.timeline-content p {
-  font-size: 1rem;
-  line-height: 1.6;
+.timeline-description {
   color: #c9d1d9;
+  line-height: 1.6;
   font-family: "Manrope-Regular", Helvetica;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
+  .experience-container {
+    padding: 2rem 1rem;
+  }
+
   .timeline::before {
     left: 30px;
   }
 
-  .timeline-dot {
-    left: 30px;
-  }
-
-  .timeline-content {
-    width: calc(100% - 70px);
-    margin-left: 60px !important;
-    margin-right: 0 !important;
-  }
-
   .timeline-item {
-    margin-bottom: 1.5rem;
+    width: calc(100% - 60px);
+    margin: 0 0 0 60px !important;
   }
 
-  .timeline-content h3 {
-    font-size: 1.3rem;
+  .timeline-dot {
+    left: -30px !important;
+    right: auto !important;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.skill-item {
+  background: rgba(30, 34, 42, 0.7);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-family: "Manrope-Regular", Helvetica;
+  font-size: 1rem;
+  color: var(--neutraloffwhite);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-item:hover {
+  background: rgba(40, 44, 52, 0.8);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    gap: 0.8rem;
   }
 
-  .timeline-content h4 {
-    font-size: 1rem;
-  }
-
-  .period {
-    font-size: 0.9rem;
-  }
-
-  .timeline-content p {
+  .skill-item {
+    padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
 }
