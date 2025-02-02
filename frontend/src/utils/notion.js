@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "https://portfoliobackend-omrefrauks-projects.vercel.app";
+const API_BASE = "https://backend-five-rho-75.vercel.app/";
 //const API_BASE = "http://localhost:5000";
 
 export const getProjects = async () => {
