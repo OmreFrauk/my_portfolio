@@ -157,6 +157,7 @@ html {
   height: auto;
   width: 90vw;
   max-width: 500px;
+  text-align: center;
 }
 .hero-image .portrait {
   object-fit: contain;
@@ -334,11 +335,19 @@ html {
   background-color: var(--black);
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
+  width: 100%;
+}
+.aboutmePage {
+  overflow-x: hidden;
+  width: 100%;
 }
 .aboutme {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
 }
 .content {
   display: flex;
@@ -391,6 +400,7 @@ html {
   max-width: 30rem;
   padding: 0 1rem;
   box-sizing: border-box;
+
 }
 .contact-content {
   padding: 12rem 5rem;
@@ -806,7 +816,7 @@ html {
   .hero-header {
     font-size: clamp(2rem, 8vw, 3.4rem) !important;
     width: 100%;
-    text-align: left;
+
   }
 
   .sendemail {

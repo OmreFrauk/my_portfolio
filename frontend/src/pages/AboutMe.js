@@ -54,7 +54,7 @@ export const AboutMe = () => {
               className="portrait"
               alt="Portrait"
               src={bio}
-              style={{ borderRadius: "70%" }}
+              style={{ borderRadius: "5%" }}
             />
           </div>
           <div className="hero-content">
