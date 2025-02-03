@@ -408,14 +408,16 @@ html {
 
 .work-photo {
   width: 100%;
-  height: 200px;
-  position: relative;
+  height: auto;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .work-photo .portrait {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .work-content {
@@ -507,8 +509,8 @@ html {
   color: #ffffff;
 }
 
-.tech-tag[style*="Notion"] {
-  background: #2b2b2b;
+.tech-tag[style*="Notion Database"] {
+  background: #db9797;
   color: #ffffff;
 }
 
@@ -548,9 +550,6 @@ html {
 }
 
 @media (max-width: 768px) {
-  .work-photo {
-    height: 200px;
-  }
 
   .work-content {
     padding: 1.5rem;
@@ -570,13 +569,20 @@ html {
     gap: 0.5rem;
   }
 
-  .work-info span:first-child {
-    font-size: 1rem;
-  }
-
+  
   .tech-tag {
     font-size: 0.9rem;
     padding: 6px 12px;
+  }
+
+  .work-photo {
+    padding: 0 1rem;
+  }
+  
+  .work-photo .portrait {
+    max-width: 100%;
+    height: auto;
+    transform: scale(0.9);
   }
 }
 .link {
@@ -706,8 +712,8 @@ html {
   }
 
   .work-photo {
-    max-width: 100%;
-    width: 100%;
+    max-width: 80%;
+    width: 80%;
   }
 
   .work-content {

@@ -17,6 +17,7 @@ export const WorkFrame = ({
     Python: "#3776ab33",
     "Amazon Services": "#ff990033",
     Mongoose: "#88000033",
+    "Notion Database": "#88000033",
     // Diğer teknolojiler için renkler ekleyebilirsiniz
   };
 
