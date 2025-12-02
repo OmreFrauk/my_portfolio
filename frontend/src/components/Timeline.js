@@ -7,8 +7,11 @@ import { useState, useEffect } from "react";
 const formatDate = (dateString) => {
   try {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      month: 'short', 
+    if (date.toString() === "Invalid Date") {
+      return "Present";
+    }
+    return date.toLocaleDateString('en-US', {
+      month: 'short',
       year: 'numeric',
       timeZone: 'UTC' // Add if dates come from UTC source
     });
@@ -19,24 +22,24 @@ const formatDate = (dateString) => {
 };
 
 // Memoized TimelineItem to prevent unnecessary re-renders
-const TimelineItem = React.memo(({ 
-  date_start, 
-  date_end, 
-  title, 
-  company, 
-  location, 
-  description, 
-  index 
+const TimelineItem = React.memo(({
+  date_start,
+  date_end,
+  title,
+  company,
+  location,
+  description,
+  index
 }) => {
   const isEven = index % 2 === 0;
-  
+
   return (
-    <motion.div 
+    <motion.div
       className={`timeline-item ${isEven ? 'timeline-right' : 'timeline-left'}`}
       initial={{ opacity: 0, x: isEven ? 100 : -100 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-      transition={{ 
+      transition={{
         duration: 0.6,
         type: "spring",
         bounce: 0.25
@@ -76,7 +79,7 @@ export const Timeline = () => {
       try {
         const data = await getExperiences();
         // Sort experiences by date in descending order
-        const sorted = data.sort((a, b) => 
+        const sorted = data.sort((a, b) =>
           new Date(b.date_start) - new Date(a.date_start)
         );
         setExperiences(sorted);
@@ -87,7 +90,7 @@ export const Timeline = () => {
         setLoading(false);
       }
     };
-    
+
     fetchExperiences();
   }, []);
 
@@ -101,7 +104,7 @@ export const Timeline = () => {
 
   return (
     <div className="experience-container">
-      <motion.h2 
+      <motion.h2
         className="section-title"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +119,7 @@ export const Timeline = () => {
       ) : (
         <div className="timeline">
           {experiences.map((exp, index) => (
-            <TimelineItem 
+            <TimelineItem
               key={exp.id || index} // Prefer unique ID from data if available
               index={index}
               {...exp}
