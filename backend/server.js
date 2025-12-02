@@ -12,7 +12,7 @@ const app = express();
 const cors = require("cors");
 app.use(express.json());
 const corsOptions = {
-  origin: ["https://www.omrefrauk.com.tr","https://omrefrauk.com.tr", "http://localhost:3000"],
+  origin: ["https://www.omrefrauk.com.tr", "https://omrefrauk.com.tr", "http://localhost:3000"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,

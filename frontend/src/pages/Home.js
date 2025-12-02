@@ -5,7 +5,7 @@ import bio from "../assets/bio.jpeg";
 import { Button } from "../components/Button.js";
 import { Frames } from "../components/Frames.js";
 import { downloadCv } from "../utils/notion";
-
+import Agent from "../components/Agent";
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [typedText, setTypedText] = useState("");
@@ -20,7 +20,7 @@ function Home() {
   useEffect(() => {
     // Sayfa yüklendiğinde animasyon için
     setIsVisible(true);
-    
+
     // Yazı yazma animasyonu
     let index = 0;
     const timer = setInterval(() => {
@@ -37,33 +37,33 @@ function Home() {
 
   return (
     <div className="home">
-   
-        
-          <Navigation />
-          <div className={`overlap ${isVisible ? 'fade-in' : ''}`}>
-          <div className="hero-content">
-            <div className="hero-content-sub">
-              <div className="hero-header">{typedText}</div>
-              <p className="text-wrapper hover-effect">
-                A Istanbul based web developer passionate about building
-                accessible and user friendly websites.
-              </p>
-              <div className="action">
-                <Button text="CONTACT ME" animation="1" onClick={() => window.location.href = '/contact'} />
-                <Button text="DOWNLOAD CV" animation="2" onClick={handleDownload} />
-                <Frames />
-              </div>
-            </div>
-            <div className="hero-image">
-              <img 
-                className="portrait hover-zoom" 
-                alt="Portrait" 
-                src={bio}
-                loading="eager" 
-              />
+
+
+      <Navigation />
+      <div className={`overlap ${isVisible ? 'fade-in' : ''}`}>
+        <div className="hero-content">
+          <div className="hero-content-sub">
+            <div className="hero-header">{typedText}</div>
+            <p className="text-wrapper hover-effect">
+              A Istanbul based software developer passionate about building
+              accessible and user friendly applications.
+            </p>
+            <div className="action">
+              <Button text="CONTACT ME" animation="1" onClick={() => window.location.href = '/contact'} />
+              <Button text="DOWNLOAD CV" animation="2" onClick={handleDownload} />
+              <Frames />
             </div>
           </div>
-
+          <div className="hero-image">
+            <img
+              className="portrait hover-zoom"
+              alt="Portrait"
+              src={bio}
+              loading="eager"
+            />
+          </div>
+        </div>
+        <Agent />
       </div>
     </div>
   );

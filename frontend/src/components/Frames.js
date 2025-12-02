@@ -35,7 +35,7 @@ export const Frames = () => {
       </div>
       <div className="frame">
         <a
-          href="https://instagram.com/omer48faruk"
+          href="https://instagram.com/omerfbuluut"
           target="_blank"
           rel="noopener noreferrer"
           style={{ display: "flex", justifySelf: "center" }}

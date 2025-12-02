@@ -2,6 +2,7 @@ import React from "react";
 import "../styles.css";
 import { Contact as ContactComponent } from "../components/Contact";
 import { Navigation } from "../components/Navigation";
+import Agent from "../components/Agent";
 
 export const Contact = () => {
   return (
@@ -9,8 +10,9 @@ export const Contact = () => {
       <Navigation />
       <div className="contact-content">
         <ContactComponent />
-
+        <Agent />
       </div>
+
     </div>
   );
 };

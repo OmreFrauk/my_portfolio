@@ -2,19 +2,25 @@ import React from "react";
 import { motion } from "framer-motion";
 import img from "../assets/arr.svg";
 import "../styles.css";
-import { downloadCv } from "../utils/notion";
+
 
 export const Button = (props) => {
   const [isHover, setIsHover] = React.useState(false);
-  
+
   return (
     <button
       className="button"
+      disabled={props.disabled}
+      style={{
+        opacity: props.disabled ? 0.5 : 1,
+        cursor: props.disabled ? "not-allowed" : "pointer",
+        ...props.style
+      }}
       onMouseLeave={() => {
         setIsHover(false);
       }}
       onMouseEnter={() => {
-        setIsHover(true);
+        if (!props.disabled) setIsHover(true);
       }}
       onClick={props.onClick}
     >

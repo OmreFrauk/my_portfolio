@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Snackbar, Alert } from "@mui/material";
 import "../styles.css";
 import { Form } from "./FormInput";
 import { Button } from "./Button";
@@ -9,16 +10,52 @@ export const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const handleClick = () => {
+  const [loading, setLoading] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+
+  const handleCloseSnackbar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbarOpen(false);
+  };
+
+  const handleClick = async () => {
+    if (!name || !email || !subject || !message) {
+      setSnackbarMessage("Please fill in all fields.");
+      setSnackbarSeverity("warning");
+      setSnackbarOpen(true);
+      return;
+    }
+
+    setLoading(true);
     const data = {
       name: name,
       email: email,
       subject: subject,
       message: message,
     };
-    console.log(data);
-    insertMessage(data);
-    sendemail(data);
+
+    try {
+      await insertMessage(data);
+      await sendemail(data);
+      setSnackbarMessage("Message sent successfully!");
+      setSnackbarSeverity("success");
+      setSnackbarOpen(true);
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+    } catch (error) {
+      console.error(error);
+      setSnackbarMessage("Failed to send message. Please try again.");
+      setSnackbarSeverity("error");
+      setSnackbarOpen(true);
+    } finally {
+      setLoading(false);
+    }
   };
   const handleDownload = async () => {
     try {
@@ -111,10 +148,15 @@ export const Contact = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <Button text="SUBMIT" animation="0" onClick={handleClick}>
+        <Button text={loading ? "SENDING..." : "SUBMIT"} animation="0" onClick={handleClick} disabled={loading}>
           {" "}
         </Button>
       </div>
+      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleCloseSnackbar}>
+        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
