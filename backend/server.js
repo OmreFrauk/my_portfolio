@@ -46,7 +46,7 @@ app.get("/notion/getExperiences", async (req, res) => {
     const experiences = properties.map((property) => {
       return {
         date_start: property.Date.date.start,
-        date_end: property.Date.date.end,
+        date_end: property.Date.date.end ? property.Date.date.end : "Present",
         title: property.Title.rich_text[0].plain_text,
         company: property.Company.title[0].plain_text,
         location: property.Location.rich_text[0].plain_text,
