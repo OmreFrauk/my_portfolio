@@ -5,7 +5,7 @@ export const WorkFrame = ({
   project: {
     project_name,
     project_description,
-    project_year,
+    start_date,
     technologies,
     project_url,
     project_screenshots,
@@ -41,7 +41,7 @@ export const WorkFrame = ({
         <div className="work-info">
           <div className="tech-info">
             <span className="tech-title">Year</span>
-            <span className="tech-title">{project_year || "2022"}</span>
+            <span className="tech-title">{start_date.date.start.trim().split("-")[0]}</span>
           </div>
           <div className="tech">
             <span className="tech-title">Technologies</span>

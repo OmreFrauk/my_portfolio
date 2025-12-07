@@ -30,7 +30,6 @@ app.get("/notion/getProjects", async (req, res) => {
       database_id: process.env.NOTION_DATABASE_PROJECTS_ID,
     });
     const properties = response.results.map((page) => page.properties);
-    console.log("Properties: ", properties);
     res.status(200).json(properties);
   } catch (error) {
     res.status(500).json("Error fetching data from Notion Database");

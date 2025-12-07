@@ -19,11 +19,11 @@ const JotFormAgent = () => {
         // DİKKAT: crossOrigin satırını sildik, artık CORS hatası vermeyecek.
 
         script.onload = () => {
-            console.log("JotForm Agent başarıyla yüklendi.");
+            console.log("JotForm Agent loaded successfully.");
         };
 
         script.onerror = () => {
-            console.error("JotForm scripti yüklenemedi. (Adblocker kontrolü yapın)");
+            console.error("Cant load JotForm Agent. (Check adblocker)");
         };
 
         document.body.appendChild(script);

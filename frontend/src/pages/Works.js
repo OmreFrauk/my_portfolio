@@ -14,6 +14,8 @@ export const Works = () => {
       try {
         const projects = await getProjects();
         setProjects(projects);
+
+
       } catch (error) {
         console.error("Error fetching projects: ", error.message);
       } finally {
@@ -26,8 +28,8 @@ export const Works = () => {
   return (
     <div className="works-page">
       <Navigation />
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -40,7 +42,7 @@ export const Works = () => {
       {loading ? (
         <div className="loading-spinner">Loading...</div>
       ) : (
-        <motion.div 
+        <motion.div
           className="works-content"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -50,14 +52,14 @@ export const Works = () => {
             (project) =>
               project.project_name.title[0] &&
               project.project_name.title.length > 0).map((project) => (
-            <motion.div
-              key={project.id.number}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <WorkFrame project={project} />
-            </motion.div>
-          ))}
+                <motion.div
+                  key={project.id.number}
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <WorkFrame project={project} />
+                </motion.div>
+              ))}
         </motion.div>
       )}
     </div>
